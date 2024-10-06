@@ -5,7 +5,7 @@ echo "Installing Dependencies"
 
 if command -v pacman &> /dev/null
 then
-	sudo pacman -S sxhkd alacritty rofi feh base-devel lm_sensors trizen && trizen -S nerd-fonts-hack
+	sudo pacman -S sxhkd feh picom alacritty rofi feh base-devel lm_sensors trizen && trizen -S nerd-fonts-hack
 elif command -v apt-get &> /dev/null
 then
 	sudo apt-get install sxhkd kitty rofi build-essential libx11-dev lm-sensors libxinerama-dev sharutils suckless-tools libxft-dev libc6 feh && wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip && unzip Hack.zip && mkdir -p $HOME/.local/share/fonts/nerdfonts/Hack && mv *.ttf $HOME/.local/share/fonts/nerdfonts/Hack && fc-cache -f -v
