@@ -23,7 +23,7 @@ sudo systemctl start dhcpcd
 sudo systemctl enable dhcpcd
 
 # Ajout des serveurs DNS dans resolv.conf
-sudo echo -e "nameserver 8.8.8.8\nnameserver 1.1.1.1" | tee -a /etc/resolv.conf
+sudo echo -e "nameserver 8.8.8.8\nnameserver 1.1.1.1" | sudo tee -a /etc/resolv.conf
 
 # Installation de yay pour AUR
 git clone https://aur.archlinux.org/yay-bin.git
