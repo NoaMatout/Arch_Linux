@@ -7,23 +7,23 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Mise à jour des paquets et du système
-pacman -Syu --noconfirm
+sudo pacman -Syu --noconfirm
 
 # Décommente les lignes dans pacman.conf (multilib)
-sed -i '/\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
+sudo sed -i '/\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
 
 # Mise à jour des dépôts après modification de pacman.conf
-pacman -Syu --noconfirm
+sudo pacman -Syu --noconfirm
 
 # Installation des paquets nécessaires
-pacman -S --noconfirm xorg ldns firefox dhcpcd vim plasma-desktop xorg-xinit networkmanager iputils git picom feh base-devel make libx11 netctl libxinerama gnu-free-fonts noto-fonts ttf-jetbrains-mono xrandr konsole
+sudo pacman -S --noconfirm xorg ldns firefox dhcpcd vim plasma-desktop xorg-xinit networkmanager iputils git picom feh base-devel make libx11 netctl libxinerama gnu-free-fonts noto-fonts ttf-jetbrains-mono xrandr konsole
 
 # Démarrage et activation de dhcpcd
-systemctl start dhcpcd
-systemctl enable dhcpcd
+sudo systemctl start dhcpcd
+sudo systemctl enable dhcpcd
 
 # Ajout des serveurs DNS dans resolv.conf
-echo -e "nameserver 8.8.8.8\nnameserver 1.1.1.1" | tee -a /etc/resolv.conf
+sudo echo -e "nameserver 8.8.8.8\nnameserver 1.1.1.1" | tee -a /etc/resolv.conf
 
 # Installation de yay pour AUR
 git clone https://aur.archlinux.org/yay-bin.git
