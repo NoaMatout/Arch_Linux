@@ -54,4 +54,4 @@ mkinitcpio -P
 # Redémarrage du système
 echo "Installation terminée. Le système va redémarrer dans 10 secondes..."
 sleep 10
-reboot
+sudo reboot
