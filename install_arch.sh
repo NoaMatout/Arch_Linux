@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ..
 
 # Mise à jour des paquets et du système
 sudo pacman -Syu --noconfirm
