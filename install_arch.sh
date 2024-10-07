@@ -29,8 +29,10 @@ cd ..
 echo 'export PATH=$PATH:~/.local/bin' >> ~/.bashrc_profile
 source ~/.bashrc_profile
 
-# Configuration de .xinitrc pour démarrer Plasma
-echo 'exec startplasma-x11' > ~/.xinitrc
+# Configuration de .xinitrc
+echo 'xrandr --output "Virtual-1" --mode 1920x1080' > ~/.xinitrc
+echo 'picom &' >> ~/.xinitrc
+echo 'exec startplasma-x11' >> ~/.xinitrc
 
 # Installation de mkinitcpio-numlock via yay
 yay -S --noconfirm mkinitcpio-numlock
