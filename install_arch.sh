@@ -26,11 +26,14 @@ makepkg -si --noconfirm
 cd ..
 
 # Ajout de configurations dans .bashrc ou .bash_profile
-echo 'export PATH=$PATH:~/.local/bin' >> ~/.bashrc_profile
-source ~/.bashrc_profile
+echo '[[ -f ~/.bashrc ]] && . ~/.bashrc' >> ~/.bash_profile
+echo 'if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then' >> ~/.bash_profile
+echo '  exec startx' >> ~/.bash_profile
+echo 'fi' >> ~/.bash_profile
 
 # Configuration de .xinitrc
 echo 'xrandr --output "Virtual-1" --mode 1920x1080' > ~/.xinitrc
+echo 'xrandr --output "Virtual1" --mode 1920x1080' > ~/.xinitrc
 echo 'picom &' >> ~/.xinitrc
 echo 'exec startplasma-x11' >> ~/.xinitrc
 
