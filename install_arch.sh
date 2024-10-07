@@ -1,5 +1,10 @@
 #!/bin/bash
-cd ..
+
+# Vérification des droits root
+if [ "$EUID" -ne 0 ]; then
+  echo "Veuillez exécuter ce script en tant que root."
+  exit 1
+fi
 
 # Mise à jour des paquets et du système
 sudo pacman -Syu --noconfirm
