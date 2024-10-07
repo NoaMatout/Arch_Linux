@@ -7,16 +7,16 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Mise à jour des paquets et du système
-sudo pacman -Syu --noconfirm
+sudo pacman -Syu --noconfirm --needed
 
 # Décommente les lignes dans pacman.conf (multilib)
 sudo sed -i '/\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
 
 # Mise à jour des dépôts après modification de pacman.conf
-sudo pacman -Syu --noconfirm
+sudo pacman -Syu --noconfirm --needed
 
 # Installation des paquets nécessaires
-sudo pacman -S --noconfirm xorg ldns firefox dhcpcd vim plasma-desktop xorg-xinit networkmanager iputils git picom feh base-devel make libx11 netctl libxinerama gnu-free-fonts noto-fonts ttf-jetbrains-mono xrandr konsole
+sudo pacman -S --needed --noconfirm xorg ldns firefox dhcpcd vim plasma-desktop xorg-xinit networkmanager iputils git picom feh base-devel make libx11 netctl libxinerama gnu-free-fonts noto-fonts ttf-jetbrains-mono xrandr konsole
 
 # Démarrage et activation de dhcpcd
 sudo systemctl start dhcpcd
