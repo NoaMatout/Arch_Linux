@@ -31,7 +31,6 @@ echo 'fi' >> ~/.bash_profile
 
 # Configuration de .xinitrc
 echo 'xrandr --output "Virtual-1" --mode 1920x1080' > ~/.xinitrc
-echo 'picom &' >> ~/.xinitrc
 echo 'exec startplasma-x11' >> ~/.xinitrc
 
 # Installation de yay pour AUR
