@@ -19,7 +19,6 @@ sudo systemctl enable dhcpcd
 sudo echo -e "nameserver 8.8.8.8\nnameserver 1.1.1.1" | sudo tee -a /etc/resolv.conf
 
 # Ajout de configurations dans .bash_profile
-echo '[[ -f ~/.bashrc ]] && . ~/.bashrc' >> ~/.bash_profile
 echo 'if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then' >> ~/.bash_profile
 echo '  exec startx' >> ~/.bash_profile
 echo 'fi' >> ~/.bash_profile
