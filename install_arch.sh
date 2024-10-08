@@ -41,9 +41,6 @@ yay -S --noconfirm mkinitcpio-numlock
 # Ajout de la configuration dans mkinitcpio.conf pour numlock
 sed -i '/^HOOKS=/s/keyboard/keyboard numlock/' /etc/mkinitcpio.conf
 
-# Regénération de l'initramfs pour appliquer les changements
-mkinitcpio -P
-
 # Redémarrage du système
 echo "Installation terminée. Le système va redémarrer dans 10 secondes..."
 sleep 10
