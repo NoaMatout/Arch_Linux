@@ -18,18 +18,18 @@ sudo systemctl enable dhcpcd
 # Ajout des serveurs DNS dans resolv.conf
 sudo echo -e "nameserver 8.8.8.8\nnameserver 1.1.1.1" | sudo tee -a /etc/resolv.conf
 
+# Ajout de configurations dans .bash_profile
+echo '[[ -f ~/.bashrc ]] && . ~/.bashrc' >> ~/.bash_profile
+echo 'if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then' >> ~/.bash_profile
+echo '  exec startx' >> ~/.bash_profile
+echo 'fi' >> ~/.bash_profile
+
 # Installation de yay pour AUR
 git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
 makepkg -si --noconfirm
 cd ..
 rm -rf yay-bin
-
-# Ajout de configurations dans .bash_profile
-echo '[[ -f ~/.bashrc ]] && . ~/.bashrc' >> ~/.bash_profile
-echo 'if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then' >> ~/.bash_profile
-echo '  exec startx' >> ~/.bash_profile
-echo 'fi' >> ~/.bash_profile
 
 # Configuration de .xinitrc
 echo 'xrandr --output "Virtual-1" --mode 1920x1080' > ~/.xinitrc
