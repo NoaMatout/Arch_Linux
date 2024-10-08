@@ -9,7 +9,7 @@ sudo sed -i '/\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
 sudo pacman -Syu --noconfirm
 
 # Installation des paquets nécessaires
-sudo pacman -S --needed --noconfirm xorg ldns firefox dhcpcd vim plasma-desktop xorg-xinit networkmanager iputils git picom feh base-devel make libx11 netctl libxinerama gnu-free-fonts noto-fonts ttf-jetbrains-mono xorg-xrandr konsole
+sudo pacman -S --needed --noconfirm ldns firefox dhcpcd vim networkmanager iputils git picom feh base-devel make libx11 netctl libxinerama gnu-free-fonts noto-fonts ttf-jetbrains-mono xorg-xrandr konsole
 
 # Démarrage et activation de dhcpcd
 sudo systemctl start dhcpcd
@@ -22,6 +22,11 @@ sudo echo -e "nameserver 8.8.8.8\nnameserver 1.1.1.1" | sudo tee -a /etc/resolv.
 echo 'if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then' >> ~/.bash_profile
 echo '  exec startx' >> ~/.bash_profile
 echo 'fi' >> ~/.bash_profile
+
+# Install graphic interface
+sudo pacman -S --needed --noconfirm xorg
+sudo pacman -S --needed --noconfirm plasma-desktop
+sudo pacman -S --needed --noconfirm xorg-xinit
 
 # Configuration de .xinitrc
 echo 'xrandr --output "Virtual-1" --mode 1920x1080' > ~/.xinitrc
