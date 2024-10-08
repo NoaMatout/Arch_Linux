@@ -23,13 +23,6 @@ echo 'if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then' >> ~/.bash_profil
 echo '  exec startx' >> ~/.bash_profile
 echo 'fi' >> ~/.bash_profile
 
-# Installation de yay pour AUR
-git clone https://aur.archlinux.org/yay-bin.git
-cd yay-bin
-makepkg -si --noconfirm
-cd ..
-rm -rf yay-bin
-
 # Configuration de .xinitrc
 echo 'xrandr --output "Virtual-1" --mode 1920x1080' > ~/.xinitrc
 echo 'picom &' >> ~/.xinitrc
@@ -43,6 +36,13 @@ sed -i '/^HOOKS=/s/keyboard/keyboard numlock/' /etc/mkinitcpio.conf
 
 # Regénération de l'initramfs pour appliquer les changements
 mkinitcpio -P
+
+# Installation de yay pour AUR
+git clone https://aur.archlinux.org/yay-bin.git
+cd yay-bin
+makepkg -si --noconfirm
+cd ..
+rm -rf yay-bin
 
 # Redémarrage du système
 echo "Installation terminée. Le système va redémarrer dans 10 secondes..."
