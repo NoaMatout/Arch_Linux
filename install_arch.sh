@@ -2,6 +2,7 @@
 
 # Mise à jour des paquets et du système
 sudo pacman -Syu --noconfirm
+
 # Décommente les lignes dans pacman.conf (multilib)
 sudo sed -i '/\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
 
