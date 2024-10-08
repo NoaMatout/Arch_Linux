@@ -28,6 +28,13 @@ echo 'xrandr --output "Virtual-1" --mode 1920x1080' > ~/.xinitrc
 echo 'picom &' >> ~/.xinitrc
 echo 'exec startplasma-x11' >> ~/.xinitrc
 
+# Installation de yay pour AUR
+git clone https://aur.archlinux.org/yay-bin.git
+cd yay-bin
+makepkg -si --noconfirm
+cd ..
+rm -rf yay-bin
+
 # Installation de mkinitcpio-numlock via yay
 yay -S --noconfirm mkinitcpio-numlock
 
@@ -36,13 +43,6 @@ sed -i '/^HOOKS=/s/keyboard/keyboard numlock/' /etc/mkinitcpio.conf
 
 # Regénération de l'initramfs pour appliquer les changements
 mkinitcpio -P
-
-# Installation de yay pour AUR
-git clone https://aur.archlinux.org/yay-bin.git
-cd yay-bin
-makepkg -si --noconfirm
-cd ..
-rm -rf yay-bin
 
 # Redémarrage du système
 echo "Installation terminée. Le système va redémarrer dans 10 secondes..."
