@@ -18,15 +18,15 @@ sudo systemctl enable dhcpcd
 # Ajout des serveurs DNS dans resolv.conf
 sudo echo -e "nameserver 8.8.8.8\nnameserver 1.1.1.1" | sudo tee -a /etc/resolv.conf
 
-# Ajout de configurations dans .bash_profile
-echo 'if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then' >> ~/.bash_profile
-echo '  exec startx' >> ~/.bash_profile
-echo 'fi' >> ~/.bash_profile
-
 # Install graphic interface
 sudo pacman -S --needed --noconfirm xorg
 sudo pacman -S --needed --noconfirm plasma-desktop
 sudo pacman -S --needed --noconfirm xorg-xinit
+
+# Ajout de configurations dans .bash_profile
+echo 'if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then' >> ~/.bash_profile
+echo '  exec startx' >> ~/.bash_profile
+echo 'fi' >> ~/.bash_profile
 
 # Configuration de .xinitrc
 echo 'xrandr --output "Virtual-1" --mode 1920x1080' > ~/.xinitrc
