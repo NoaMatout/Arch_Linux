@@ -39,7 +39,7 @@ rm -rf yay-bin
 yay -S --noconfirm mkinitcpio-numlock
 
 # Ajout de la configuration dans mkinitcpio.conf pour numlock
-sudo sed -i '/^HOOKS=/s/keyboard/keyboard numlock/' /etc/mkinitcpio.conf
+sudo sed -i '/^HOOKS=/s/keymap/keymap numlock/' /etc/mkinitcpio.conf
 
 # Redémarrage du système
 echo "Installation terminée. Le système va redémarrer dans 10 secondes..."
