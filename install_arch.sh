@@ -25,7 +25,7 @@ sudo pacman -S --needed --noconfirm xorg-xinit
 
 # Ajout de configurations dans .bash_profile
 echo 'if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then' >> ~/.bash_profile
-echo '  exec startx' >> ~/.bash_profile
+echo '        exec startx' >> ~/.bash_profile
 echo 'fi' >> ~/.bash_profile
 
 # Configuration de .xinitrc
