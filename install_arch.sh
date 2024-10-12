@@ -10,7 +10,7 @@ sudo sed -i '/\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
 sudo pacman -Syu --noconfirm
 
 # Installation des paquets nécessaires
-sudo pacman -S --needed --noconfirm ldns firefox dhcpcd vim networkmanager iputils git htop picom feh base-devel make libx11 netctl libxinerama gnu-free-fonts noto-fonts ttf-jetbrains-mono xorg-xrandr konsole
+sudo pacman -S --needed --noconfirm ldns firefox dhcpcd vim networkmanager iputils git htop picom feh base-devel make libx11 netctl libxinerama gnu-free-fonts noto-fonts ttf-jetbrains-mono xorg-xrandr konsole ttf-hack
 
 # Démarrage et activation de dhcpcd
 sudo systemctl start dhcpcd
