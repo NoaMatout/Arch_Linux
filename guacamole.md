@@ -143,3 +143,35 @@ Cordialement,
 ---
 *P.S. : Une session de démonstration collective peut être organisée sur demande.*
 EOF
+
+**Objet :** Nouvelle solution d'accès distant - Bastion Guacamole
+
+Bonjour,
+
+**🚀 Nouvelle solution disponible : Apache Guacamole**
+
+**Qu'est-ce que c'est ?**
+Un bastion sécurisé accessible via navigateur web pour vous connecter à tous nos serveurs Windows et Linux.
+
+**Comment y accéder ?**
+- **URL :** https://avocado.supplay.fr
+- **Identifiants :** Vos login/mot de passe Active Directory
+- **Prérequis :** Être membre du groupe AD "Guacamole"
+
+**Comment utiliser ?**
+1. Connectez-vous avec vos identifiants AD
+2. Cliquez sur le serveur désiré dans les dossiers
+3. Travaillez normalement dans votre navigateur
+
+**Avantages :**
+✅ Plus de client RDP/SSH à installer
+✅ Accès centralisé et sécurisé
+✅ Enregistrement automatique des sessions
+✅ Historique de vos connexions
+
+**Support :** [VOTRE_CONTACT]
+
+*Captures d'écran et documentation complète en pièce jointe.*
+
+Cordialement,
+[VOTRE_NOM]
